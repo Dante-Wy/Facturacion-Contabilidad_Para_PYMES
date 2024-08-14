@@ -6,9 +6,8 @@ const FacturaSchema = new mongoose.Schema({
         producto: { type: mongoose.Schema.Types.ObjectId, ref: 'Producto', required: true },
         cantidad: { type: Number, required: true }
     }],
-    total: { type: Number, required: true },
-    fechaEmision: { type: Date, default: Date.now },
-    estado: { type: String, enum: ['Pagada', 'Pendiente', 'Cancelada'], default: 'Pendiente' }
+    fecha: { type: Date, default: Date.now },
+    total: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Factura', FacturaSchema);
